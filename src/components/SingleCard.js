@@ -1,12 +1,19 @@
 import React from "react";
-import { useState } from "react";
 
-function SingleCard(cards, id){
+function SingleCard({cards, handleChoice}){
+  const handleClick = () =>
+  {
+    handleChoice(cards)
+  }
     return(
-        <div className='card' key={id}>
+        <div className='card'>
         <div>
-          <img className='front' src={cards.cards.src} alt="card front" />
-          <img className='back' src="/img/cover.png" alt='card back'/>
+          <img className='front' src={cards.src} alt="card front" />
+          <img 
+          className='back' 
+          src="/img/cover.png" 
+          onClick={handleClick} 
+          alt='card back'/>
         </div>
       </div>
     )
